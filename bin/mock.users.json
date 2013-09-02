@@ -1,0 +1,28 @@
+{
+    "users": [
+        {
+            "name": "Steve Armstrong",
+            "repos": [
+                {
+                    "name": "backboneMaps",
+                    "url": "../bin/mock.reports/backbone.maps.coverage.json"
+                }, 
+
+                {
+                    "name": "backboneMaps",
+                    "url": "../bin/mock.reports/backbone.maps.coverage.json"
+                },
+
+                {
+                    "name": "backboneMaps",
+                    "url": "../bin/mock.reports/backbone.maps.coverage.json"
+                }
+
+            ]
+        },
+        {
+            "name": "Slice Dodge",
+            "repos": []
+        }
+    ]
+}

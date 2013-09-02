@@ -1,0 +1,24 @@
+{
+  "name": "monthly-calc",
+  "version": "0.0.1",
+  "main": "app/index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.8",
+    "jquery": "1.9",
+    "backbone": "~1.0.0",
+    "underscore": "~1.5.1"
+  },
+  "devDependencies": {
+    "mocha": "~1.12.1",
+    "chai": "~1.7.2",
+    "sinon": "~1.7.3",
+    "istanbul": "https://github.com/gotwarlost/istanbul"
+  }
+}
