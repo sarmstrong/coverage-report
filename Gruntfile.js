@@ -11,7 +11,7 @@ module.exports = function(grunt) {
 
         jshint : {
 
-            all : ['src/**/*.js', 'spec/**/*.js' , 'examples/app/**/*.js']
+            all : ['src/**/*.js', 'test/**/*.js' , '/app/js/app/t**/*.js']
 
         } ,
 
@@ -26,6 +26,22 @@ module.exports = function(grunt) {
                 reporter: 'Spec'
 
 
+            } , 
+
+            jsonCOV : {
+
+                src : ['test/**/*.html'] , 
+
+                options : {
+
+                    log : 'true' , 
+
+                    reporter: 'JSONCov'
+
+
+                } ,
+
+
             }
 
         } , 
@@ -36,6 +52,17 @@ module.exports = function(grunt) {
 
             tasks : ['jshint' , 'mocha']
 
+        } , 
+
+        blanket_mocha: {
+
+            all: [ 'test/test.html' ],
+
+            options: {
+
+                threshold: 100
+
+            }
         }
 
     }); 
@@ -46,9 +73,11 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-mocha');
 
+    grunt.loadNpmTasks('grunt-blanket-mocha');
+
     grunt.registerTask('default', ['jshint' , 'mocha' ]);
 
-    grunt.registerTask('test'  , ['mocha' , 'jshint']);
+    grunt.registerTask('test'  , ['mocha' , 'jshint' , 'blanket_mocha']);
 
     grunt.registerTask('dev' , ['watch']);
 

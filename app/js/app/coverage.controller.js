@@ -88,6 +88,7 @@ define(['marionette' , 'jquery', 'underscore' , 'backbone' ] , function(Marionet
 					if (increment >= length) {
 
 						cb.apply(controller , ['success']);
+
 					}
 
 
@@ -104,13 +105,7 @@ define(['marionette' , 'jquery', 'underscore' , 'backbone' ] , function(Marionet
 
 			return user; 
 
-		} , 
-
-		getCurrentUser : function() { 
-
-			return this.currentUser; 
-
-		}
+		} 
 
 
 	}); 

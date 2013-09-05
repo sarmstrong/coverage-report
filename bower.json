@@ -19,6 +19,7 @@
     "mocha": "~1.12.1",
     "chai": "~1.7.2",
     "sinon": "~1.7.3",
-    "istanbul": "https://github.com/gotwarlost/istanbul"
+    "blanket": "~1.1.5",
+    "mocha-blanket.js": "https://raw.github.com/alex-seville/blanket/master/src/adapters/mocha-blanket.js"
   }
 }
