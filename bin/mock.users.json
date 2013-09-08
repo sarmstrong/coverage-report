@@ -2,6 +2,8 @@
     "users": [
         {
             "name": "Steve Armstrong",
+
+            "img" : "https://0.gravatar.com/avatar/8048ea5b4da1d0f492232da96156fc7b?d=https%3A%2F%2Fidenticons.github.com%2F8964eb51dc92aba7ef8b23ae8a342c7d.png&s=420", 
             "repos": [
                 {
                     "name": "backboneMaps",
@@ -21,7 +23,9 @@
             ]
         },
         {
-            "name": "Slice Dodge",
+            "name": "Doug Crockford",
+
+            "img" : "https://0.gravatar.com/avatar/b871de839c31ddb1d9db8e33e0cb88a6?d=https%3A%2F%2Fidenticons.github.com%2F0563932710d3cf09c46b5c41d69099df.png&s=420" , 
             "repos": []
         }
     ]

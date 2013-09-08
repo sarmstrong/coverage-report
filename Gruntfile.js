@@ -11,7 +11,7 @@ module.exports = function(grunt) {
 
         jshint : {
 
-            all : ['src/**/*.js', 'test/**/*.js' , '/app/js/app/t**/*.js']
+            all : [ 'test/**/*.js' , '/app/js/app/**/*.js' ,"Gruntfile.js"]
 
         } ,
 
@@ -26,23 +26,7 @@ module.exports = function(grunt) {
                 reporter: 'Spec'
 
 
-            } , 
-
-            jsonCOV : {
-
-                src : ['test/**/*.html'] , 
-
-                options : {
-
-                    log : 'true' , 
-
-                    reporter: 'JSONCov'
-
-
-                } ,
-
-
-            }
+            } 
 
         } , 
 
@@ -63,6 +47,24 @@ module.exports = function(grunt) {
                 threshold: 100
 
             }
+        } , 
+
+        requirejs: {
+
+          compile: {
+
+            options: {
+
+              name : "app", 
+
+              baseUrl: "app/js/vendor",
+
+              mainConfigFile: "app/js/app.js",
+
+              out: "app/js/dist/coverage.js"
+
+            }
+          }
         }
 
     }); 
@@ -71,13 +73,17 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-watch');
 
+    grunt.loadNpmTasks('grunt-contrib-requirejs');
+
     grunt.loadNpmTasks('grunt-mocha');
 
     grunt.loadNpmTasks('grunt-blanket-mocha');
 
-    grunt.registerTask('default', ['jshint' , 'mocha' ]);
+    grunt.registerTask('default', ['jshint' , 'mocha' , 'blanket_mocha' , 'requirejs' ]);
 
     grunt.registerTask('test'  , ['mocha' , 'jshint' , 'blanket_mocha']);
+
+    grunt.registerTask('optimize' , ['requirejs']);
 
     grunt.registerTask('dev' , ['watch']);
 

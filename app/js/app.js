@@ -12,7 +12,9 @@ requirejs.config({
 
         marionette : 'backbone.marionette/lib/backbone.marionette' , 
 
-        app : '../app'
+        app : '../app' , 
+
+        tpl : "requirejs-tpl/tpl", 
 
     } , 
 
@@ -51,7 +53,7 @@ requirejs.config({
 
 requirejs(['app/coverage.app'] , function(app) { 
 
-    app.start();
+    app.start({rootEl: "#app-main" , usersEndPoint : "../bin/mock.users.json"});
 
 }); 
 

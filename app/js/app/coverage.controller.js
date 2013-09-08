@@ -1,21 +1,30 @@
-define(['marionette' , 'jquery', 'underscore' , 'backbone' ] , function(Marionette , $ , _ , Backbone){
+define(['marionette' , 'jquery', 'underscore' , 'backbone' , 'app/coverage.collection.users' , 'app/coverage.collection.repos' , 'app/coverage.layout.app'] , function(Marionette , $ , _ , Backbone , UsersCollection , ReposCollection , AppLayout){
 
 	var Controller = Marionette.Controller.extend({
 
 		initialize : function(options) { 
 
-			this.users = new Backbone.Collection();
+			this.users = new UsersCollection();
 
-			this.users.parse = function(response) { 
+			this.currentUserRepos = new ReposCollection(); 
 
-				return response.users;
-			}
+			this.layout = new AppLayout({
 
-			this.currentUserRepos = new Backbone.Collection(); 
+				users :  this.users , 
 
-			this.currentUserRepos.on("add" , function(repo) { 
+				el : options.rootEl
 
-				repo.url = repo.attributes.url;
+			}); 
+
+			this.layout.render(); 
+
+		} , 
+
+		start : function(options) { 
+
+			this.loadUsers(options.usersEndPoint , function() {
+
+				////done
 
 			});
 
@@ -92,7 +101,7 @@ define(['marionette' , 'jquery', 'underscore' , 'backbone' ] , function(Marionet
 					}
 
 
-				}})
+				}}); 
 
 
 			}); 

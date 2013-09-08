@@ -20,6 +20,7 @@
     "chai": "~1.7.2",
     "sinon": "~1.7.3",
     "blanket": "~1.1.5",
-    "mocha-blanket.js": "https://raw.github.com/alex-seville/blanket/master/src/adapters/mocha-blanket.js"
+    "mocha-blanket.js": "https://raw.github.com/alex-seville/blanket/master/src/adapters/mocha-blanket.js",
+    "requirejs-text": "~2.0.10"
   }
 }

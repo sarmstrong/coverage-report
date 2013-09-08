@@ -16,7 +16,9 @@ requirejs.config({
 
         app : '../app', 
 
-        spec : '../../../test/spec',
+        tpl : "requirejs-tpl/tpl", 
+
+        spec : '../../../test/spec'
 
     } , 
 
@@ -51,7 +53,7 @@ requirejs.config({
 
 });
 
-requirejs(['spec/controller'] , function() { 
+requirejs(['spec/controller' , 'spec/layout.app' , 'spec/team.view'] , function() { 
 
     if (window.mochaPhantomJS) { 
 
@@ -63,5 +65,5 @@ requirejs(['spec/controller'] , function() {
 
     }
 
-})
+}); 
 

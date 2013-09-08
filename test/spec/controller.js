@@ -55,11 +55,7 @@ define(['chai' , 'app/coverage.controller'] , function(chai , Controller) {
 			});
 
 		}); 
-
-
-
-
-
+		
 		it("Controller should load a User Collection with 3 coverage repos" , function(done) { 
 
 			controller.loadUsers('../bin/mock.users.json' , function(collection , response , options) {
@@ -75,10 +71,6 @@ define(['chai' , 'app/coverage.controller'] , function(chai , Controller) {
 					done();
 
 				}); 
-
-				//done();
-
-
 
 			});  
 

@@ -4,7 +4,9 @@ define(['marionette' , 'app/coverage.controller'] , function(Marionette , Contro
 
     MyApp.addInitializer(function(options) {
 
-    	var c = new Controller();
+    	var c = new Controller(options);
+
+    	c.start(options);
 
     }); 
 
