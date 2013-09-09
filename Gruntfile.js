@@ -32,9 +32,9 @@ module.exports = function(grunt) {
 
         watch : {
 
-            files : ['app/js/app/**/*.js', 'test/**/*.js' , 'test/**/*.html'] , 
+            files : ['app/js/app/**/*.js', 'test/**/*.js' , 'test/**/*.html' , 'app/less/**/*.less'] , 
 
-            tasks : ['jshint' , 'mocha']
+            tasks : ['jshint' , 'mocha' , 'less:development']
 
         } , 
 
@@ -65,6 +65,20 @@ module.exports = function(grunt) {
 
             }
           }
+        } , 
+
+        less : {
+
+            development : {
+
+                files: {
+                    
+                    "app/css/styles.css" : "app/less/styles.less"
+                
+                }
+
+            }
+
         }
 
     }); 
@@ -78,6 +92,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-mocha');
 
     grunt.loadNpmTasks('grunt-blanket-mocha');
+
+    grunt.loadNpmTasks('grunt-contrib-less');
 
     grunt.registerTask('default', ['jshint' , 'mocha' , 'blanket_mocha' , 'requirejs' ]);
 

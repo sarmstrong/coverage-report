@@ -1,0 +1,16 @@
+p,
+h3 {
+  font-family: 'Open-Sans', sans-serif;
+  color: "#555555";
+}
+img {
+  max-width: 100%;
+}
+.teamMember {
+  width: 20%;
+}
+#members {
+  float: left;
+  padding: 5%;
+  width: 90%;
+}
